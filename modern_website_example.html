@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Web Application</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --primary: #0a6cff;
+      --secondary: #0d47a1;
+      --text: #1c2533;
+      --muted: #617088;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 20px 24px;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 1.75rem;
+    }
+
+    nav {
+      margin-top: 12px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 36px rgba(18, 44, 99, 0.08);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(18, 44, 99, 0.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      color: var(--secondary);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input,
+    button {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(10, 108, 255, 0.12);
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    button:hover {
+      background: #094bc1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 24px;
+      color: var(--muted);
+    }
+
+    code {
+      display: block;
+      padding: 16px;
+      background: #eef2ff;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="site-title">Modern Web App</h1>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#video">Promo</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Build a secure, modern website</h1>
+      <p>Use semantic HTML, HTTPS communication, and safe form submission so your application looks great and sends data securely.</p>
+    </section>
+
+    <section class="card" id="video">
+      <h2>Promotional Video</h2>
+      <p>Embed a promotional video directly in the homepage so visitors can learn about your product.</p>
+      <video controls width="100%" poster="promo-poster.jpg">
+        <source src="promo.mp4" type="video/mp4">
+        Your browser does not support embedded videos. <a href="promo.mp4">Download the video</a> instead.
+      </video>
+    </section>
+
+    <section class="card" id="register">
+      <h2>Secure Registration Form</h2>
+      <p>Always send user registration data using an HTTPS POST request, not GET.</p>
+      <form method="POST" action="https://example.com/register">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required autocomplete="new-password" />
+        </div>
+        <button type="submit">Create account</button>
+      </form>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Semantic Navigation</h2>
+        <p>The navigation menu is wrapped in a <code>&lt;nav&gt;</code> element and uses a list of links for accessibility and semantic structure.</p>
+      </article>
+      <article class="card">
+        <h2>Correct Web Protocol</h2>
+        <p>Use HTTPS for all public form actions and API communication.</p>
+        <code>https://example.com/register</code>
+      </article>
+      <article class="card">
+        <h2>XML Configuration</h2>
+        <p>Fix XML syntax errors by including the XML declaration and closing every tag.</p>
+        <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;configuration&gt;
+  &lt;server&gt;
+    &lt;port&gt;443&lt;/port&gt;
+    &lt;protocol&gt;https&lt;/protocol&gt;
+  &lt;/server&gt;
+  &lt;database&gt;
+    &lt;host&gt;db.example.com&lt;/host&gt;
+    &lt;port&gt;5432&lt;/port&gt;
+  &lt;/database&gt;
+&lt;/configuration&gt;</code>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>© 2026 Modern Web Application. Designed with secure HTML, CSS, and HTTPS.</p>
+  </footer>
+</body>
+</html>
